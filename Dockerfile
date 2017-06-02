@@ -8,7 +8,3 @@ COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 COPY ./contrib/ /opt/app-root
 
 COPY server.js /usr/src/app
-
-# Drop the root user and make the content of /opt/app-root owned by user 1001
-RUN chown -R 1001:0 /opt/app-root
-USER 1001
